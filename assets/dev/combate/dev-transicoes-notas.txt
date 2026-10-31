@@ -1,0 +1,1 @@
+Geracao: image_gen integrada, referencias do dev existente. Prompts: ataque aereo de seis quadros com pernas recolhidas, teclado e corte digital ciano, cafe na outra mao; reacao de dano de quatro quadros com susto, recuo e recuperacao, mantendo identidade e roupas. Fundos transparentes. air_attack: 1792x640 por quadro, 12 FPS; hurt: 640x640 por quadro, 20 FPS; sem loop.

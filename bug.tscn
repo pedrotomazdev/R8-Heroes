@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b6xpgf7nrisvd" path="res://assets/bug-walk-spritesheet.png" id="2_q3ryj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfw54"]
-size = Vector2(83, 84)
+size = Vector2(72, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_contato"]
-size = Vector2(95, 96)
+size = Vector2(82, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c761e"]
 atlas = ExtResource("2_q3ryj")
@@ -46,10 +46,11 @@ animations = [{
 }]
 
 [node name="Alvo" type="CharacterBody2D" unique_id=157403407]
+collision_layer = 4
 script = ExtResource("1_hs7dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491492578]
-position = Vector2(0, 5)
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_cfw54")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1863759733]
@@ -71,8 +72,8 @@ target_position = Vector2(0, 80)
 
 [node name="AreaContato" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 1
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaContato"]
-position = Vector2(0, 5)
+position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_contato")

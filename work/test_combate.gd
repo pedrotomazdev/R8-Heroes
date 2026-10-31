@@ -39,9 +39,10 @@ func testar() -> void:
 	dev.invulnerabilidade_restante = 0.0
 	dev.receber_dano(100, bug.global_position)
 	assert(dev.morto and dev.vida == 0)
-	await create_timer(1.2).timeout
+	await create_timer(dev.duracao_burnout + 0.2).timeout
 	assert(current_scene != cena)
 	assert(current_scene.get_node("Dev").vida == 100)
 	assert(current_scene.has_node("Alvo"))
 	print("PASSOU: contato, invulnerabilidade, recuo, cancelamento do ataque, queda e reinicio.")
 	quit()
+

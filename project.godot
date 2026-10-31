@@ -11,11 +11,16 @@ config_version=5
 [application]
 
 config/name="R8 Heroes"
+run/main_scene="res://fase01.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -43,9 +48,18 @@ atacar={
 ]
 }
 
+prompt={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"button_index":2)]
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[gui]
+
+theme/custom="res://tema_ui.tres"
 
 [rendering]
 

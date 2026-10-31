@@ -31,12 +31,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 		move_and_slide()
 		return
-	# A área é um pouco maior que o corpo sólido, detectando até um encostão.
-	# Consultar continuamente permite novo dano após acabar a invulnerabilidade,
-	# mesmo se o jogador continuar encostado sem sair e entrar outra vez.
-	for corpo in area_contato.get_overlapping_bodies():
-		if corpo != self and corpo.has_method("receber_dano"):
-			corpo.receber_dano(dano_contato, global_position)
+	_causar_dano_contato()
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,6 +53,13 @@ func _physics_process(delta: float) -> void:
 func virar() -> void:
 	direcao *= -1.0
 	atualizar_direcao()
+
+
+func _causar_dano_contato() -> void:
+	# Compartilhado com o atirador; proteção do jogador evita dano por frame.
+	for corpo in area_contato.get_overlapping_bodies():
+		if corpo != self and corpo.has_method("receber_dano"):
+			corpo.receber_dano(dano_contato, global_position)
 
 
 func atualizar_direcao() -> void:

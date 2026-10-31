@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hotdog-spin-spritesheet.png" id="1"]
+
+[ext_resource type="Script" path="res://hotdog.gd" id="2"]
+
+[sub_resource type="AtlasTexture" id="frame0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame1"]
+atlas = ExtResource("1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame2"]
+atlas = ExtResource("1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame3"]
+atlas = ExtResource("1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame4"]
+atlas = ExtResource("1")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame5"]
+atlas = ExtResource("1")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame6"]
+atlas = ExtResource("1")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="frame7"]
+atlas = ExtResource("1")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="animacao"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("frame0")}, {"duration": 1.0, "texture": SubResource("frame1")}, {"duration": 1.0, "texture": SubResource("frame2")}, {"duration": 1.0, "texture": SubResource("frame3")}, {"duration": 1.0, "texture": SubResource("frame4")}, {"duration": 1.0, "texture": SubResource("frame5")}, {"duration": 1.0, "texture": SubResource("frame6")}, {"duration": 1.0, "texture": SubResource("frame7")}], "loop": true, "name": &"spin", "speed": 8.0}]
+
+[sub_resource type="RectangleShape2D" id="colisao"]
+size = Vector2(64, 70)
+
+[node name="Hotdog" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2")
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("colisao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("animacao")
+animation = &"spin"
+autoplay = "spin"
+
+[node name="Texto" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -60.0
+text = "HOTDOG +40"
+theme_override_font_sizes/font_size = 16
+mouse_filter = 2

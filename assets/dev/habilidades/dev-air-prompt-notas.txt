@@ -1,0 +1,1 @@
+image_gen integrada: versao aerea da digitacao do dev, joelhos dobrados e pernas equilibrando o salto, teclado flutuante, cafe preservado, confirmacao de comando e recuperacao no ar. Seis quadros 768x640, 12 FPS, sem loop.

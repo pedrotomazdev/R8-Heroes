@@ -1,0 +1,1 @@
+image_gen integrada. Prompt: seis quadros do mesmo dev correndo e golpeando com teclado, pernas alternando passadas, cafe na outra mao, corte digital ciano, fundo transparente. Folha: 6x1, quadros 1792x640; run_attack, 12 FPS, sem loop.

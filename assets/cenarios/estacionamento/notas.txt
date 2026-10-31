@@ -1,0 +1,1 @@
+image_gen integrada: casa antiga azul com telhas de barro e mangueira grande, fundo lateral em pixel art; atlas de muro branco envelhecido e brita. Composicao baseada na descricao do estacionamento real, sem mureta.

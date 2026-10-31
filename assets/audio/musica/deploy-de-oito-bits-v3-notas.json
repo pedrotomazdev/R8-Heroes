@@ -1,0 +1,15 @@
+{
+  "bpm": 112,
+  "duracao_segundos": 68.57142857142857,
+  "compassos": 32,
+  "sample_rate": 44100,
+  "pico_dbfs": -1.11,
+  "rms_dbfs": -11.06,
+  "eventos_midi": {
+    "melodia": 22,
+    "arpejo": 468,
+    "baixo": 120,
+    "bateria": 250
+  },
+  "amostras_invalidas": 0
+}

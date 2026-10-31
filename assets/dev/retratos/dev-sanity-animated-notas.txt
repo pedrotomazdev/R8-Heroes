@@ -1,0 +1,1 @@
+image_gen integrada: retratos 3x5, cinco estados de sanidade com pose base, inspiracao e piscada. Quadros 256x256. Shader de recorte remove transparencia residual da geracao em runtime.

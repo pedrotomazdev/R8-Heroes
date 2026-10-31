@@ -1,0 +1,1 @@
+image_gen integrada: hotdog de pao dourado, salsicha, mostarda em ziguezague; oito perspectivas de giro, pixel art, fundo transparente. Folha 4x2, quadros 128x128, spin 8 FPS em loop.

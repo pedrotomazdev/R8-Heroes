@@ -1,0 +1,1 @@
+image_gen integrada. Prompt: dev materializa teclado flutuante, digita com mao livre mantendo cafe, confirma comando com flash ciano e recupera pose; seis quadros em pixel art transparente. Folha 6x1, quadros 768x640, 12 FPS sem loop.

@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://bug_atirador.gd" id="1_hs7dx"]
+[ext_resource type="Texture2D" path="res://assets/inimigos/atirador/bug-atirador-spritesheet.png" id="2_q3ryj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfw54"]
+size = Vector2(72, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_contato"]
+size = Vector2(82, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c761e"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tblr"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xve05"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n80v8"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="tiro_0"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(0,512,512,512)
+
+[sub_resource type="AtlasTexture" id="tiro_1"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(512,512,512,512)
+
+[sub_resource type="AtlasTexture" id="tiro_2"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1024,512,512,512)
+
+[sub_resource type="AtlasTexture" id="tiro_3"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1536,512,512,512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41lsh"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("tiro_0")}, {"duration": 1.0, "texture": SubResource("tiro_1")}, {"duration": 1.0, "texture": SubResource("tiro_2")}, {"duration": 1.0, "texture": SubResource("tiro_3")}], "loop": false, "name": &"shoot", "speed": 8.0}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c761e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tblr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xve05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n80v8")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[node name="Alvo" type="CharacterBody2D" unique_id=157403407]
+collision_layer = 4
+script = ExtResource("1_hs7dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491492578]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_cfw54")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1863759733]
+position = Vector2(0, 5)
+scale = Vector2(1.3750001, 0.815)
+color = Color(0.9411765, 0, 0, 0)
+polygon = PackedVector2Array(-30, -50, -0.65338135, -50, 30, -50, 30, -0.474411, 30, 50, -30, 50)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=637525845]
+position = Vector2(0, -7)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_41lsh")
+animation = &"walk"
+frame_progress = 0.124056466
+
+[node name="SensorBorda" type="RayCast2D" parent="." unique_id=441601900]
+position = Vector2(-55, 0)
+target_position = Vector2(0, 80)
+
+[node name="AreaContato" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaContato"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_contato")

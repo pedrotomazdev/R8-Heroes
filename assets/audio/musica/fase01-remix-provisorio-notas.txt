@@ -1,0 +1,5 @@
+Música provisória da primeira fase, fornecida pelo usuário.
+Arquivo de origem: Regular Show - Gary Vs. David [8 Bit - Chiptune Remix] 8 Bit Planet.mp3.wav
+Cópia integral do áudio recebido: PCM 16-bit estéreo, 44100 Hz, aproximadamente 49,77 segundos.
+Reprodução e loop configurados em fase01.gd; volume inicial do nó Musica: -14 dB.
+As composições anteriores ficam preservadas para comparação.
