@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dd4vn76c6q448"]
+
+[ext_resource type="PackedScene" uid="uid://0vg1jqwnjxt5" path="res://dev.tscn" id="1_ca3x4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41lsh"]
+size = Vector2(1000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca3x4"]
+size = Vector2(200, 30)
+
+[node name="Estacionamento" type="Node2D" unique_id=1551556196]
+
+[node name="Dev" parent="." unique_id=710973579 instance=ExtResource("1_ca3x4")]
+position = Vector2(200, 200)
+up_direction = Vector2(0, -1)
+velocidade = 800.0
+forca_pulo = 480.0
+
+[node name="Chao" type="StaticBody2D" parent="." unique_id=1785757344]
+position = Vector2(500, 450)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=1734687812]
+shape = SubResource("RectangleShape2D_41lsh")
+
+[node name="Polygon2D" type="Polygon2D" parent="Chao" unique_id=1587944783]
+polygon = PackedVector2Array(-500, -20, 500, -20, 500, 20, -500, 20)
+
+[node name="Plataforma" type="StaticBody2D" parent="." unique_id=1168940808]
+position = Vector2(550, 350)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=1136816475]
+shape = SubResource("RectangleShape2D_ca3x4")
+
+[node name="Polygon2D" type="Polygon2D" parent="Plataforma" unique_id=2093885450]
+polygon = PackedVector2Array(-100, -15, 100, -15, 100, 15, -100, 15)
