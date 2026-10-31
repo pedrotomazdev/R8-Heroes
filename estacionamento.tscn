@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://dd4vn76c6q448"]
 
 [ext_resource type="PackedScene" uid="uid://0vg1jqwnjxt5" path="res://dev.tscn" id="1_ca3x4"]
-[ext_resource type="Script" uid="uid://b8ry67xyksmg8" path="res://alvo.gd" id="2_womap"]
+[ext_resource type="PackedScene" uid="uid://d03v00dtd1kmi" path="res://bug.tscn" id="2_womap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41lsh"]
 size = Vector2(1000, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca3x4"]
 size = Vector2(200, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfw54"]
-size = Vector2(60, 100)
 
 [node name="Estacionamento" type="Node2D" unique_id=1551556196]
 
@@ -38,13 +35,5 @@ shape = SubResource("RectangleShape2D_ca3x4")
 [node name="Polygon2D" type="Polygon2D" parent="Plataforma" unique_id=2093885450]
 polygon = PackedVector2Array(-100, -15, 100, -15, 100, 15, -100, 15)
 
-[node name="Alvo" type="StaticBody2D" parent="." unique_id=39250855]
+[node name="Alvo" parent="." unique_id=918484740 instance=ExtResource("2_womap")]
 position = Vector2(800, 380)
-script = ExtResource("2_womap")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo" unique_id=1367373708]
-shape = SubResource("RectangleShape2D_cfw54")
-
-[node name="Polygon2D" type="Polygon2D" parent="Alvo" unique_id=1151228913]
-color = Color(0.9411765, 0, 0, 1)
-polygon = PackedVector2Array(-30, -50, 30, -50, 30, 50, -30, 50)

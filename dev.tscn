@@ -238,7 +238,6 @@ radius = 20.0
 height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41lsh"]
-size = Vector2(100, 80)
 
 [node name="Dev" type="CharacterBody2D" unique_id=710973579]
 up_direction = Vector2(0, 1)
@@ -260,7 +259,6 @@ shape = SubResource("CapsuleShape2D_6r40v")
 position_smoothing_enabled = true
 
 [node name="HitboxAtaque" type="Area2D" parent="." unique_id=1596691725]
-position = Vector2(65, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAtaque" unique_id=761588665]
 shape = SubResource("RectangleShape2D_41lsh")

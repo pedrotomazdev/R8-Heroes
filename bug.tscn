@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d03v00dtd1kmi"]
+
+[ext_resource type="Script" uid="uid://b8ry67xyksmg8" path="res://alvo.gd" id="1_hs7dx"]
+[ext_resource type="Texture2D" uid="uid://b6xpgf7nrisvd" path="res://assets/bug-walk-spritesheet.png" id="2_q3ryj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfw54"]
+size = Vector2(83, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c761e"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tblr"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xve05"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n80v8"]
+atlas = ExtResource("2_q3ryj")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41lsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c761e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tblr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xve05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n80v8")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[node name="Alvo" type="CharacterBody2D" unique_id=157403407]
+script = ExtResource("1_hs7dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491492578]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cfw54")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1863759733]
+position = Vector2(0, 5)
+scale = Vector2(1.3750001, 0.815)
+color = Color(0.9411765, 0, 0, 0)
+polygon = PackedVector2Array(-30, -50, -0.65338135, -50, 30, -50, 30, -0.474411, 30, 50, -30, 50)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=637525845]
+position = Vector2(0, 9)
+scale = Vector2(0.1796875, 0.1911164)
+sprite_frames = SubResource("SpriteFrames_41lsh")
+animation = &"walk"
+frame_progress = 0.124056466
+
+[node name="SensorBorda" type="RayCast2D" parent="." unique_id=441601900]
+position = Vector2(-55, 0)
+target_position = Vector2(0, 80)
