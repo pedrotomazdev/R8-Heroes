@@ -16,6 +16,11 @@ Protótipo inicial em desenvolvimento. O foco atual é acertar o movimento do pe
 - Câmera acompanhando o jogador.
 - Animações de idle, corrida, subida, queda e pouso.
 - Retorno à posição inicial ao cair para fora da fase.
+- Ataque com teclado, área de impacto e inimigo com vida e reação visual.
+- Bug patrulhando e detectando bordas.
+- Dev com 100 de vida e dano de contato do bug (20 por acerto).
+- Invulnerabilidade de 1 segundo, piscar e recuo após receber dano.
+- Derrota com reinício automático da fase após 1 segundo.
 
 ### Planejado
 
@@ -50,6 +55,7 @@ Na primeira abertura, aguarde a importação dos assets. A cena principal ainda 
 | Mover para a esquerda | A |
 | Mover para a direita | D |
 | Pular | W ou Espaço |
+| Atacar | Clique esquerdo |
 
 ## Organização inicial
 

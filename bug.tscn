@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfw54"]
 size = Vector2(83, 84)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_contato"]
+size = Vector2(95, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c761e"]
 atlas = ExtResource("2_q3ryj")
 region = Rect2(0, 0, 512, 512)
@@ -65,3 +68,11 @@ frame_progress = 0.124056466
 [node name="SensorBorda" type="RayCast2D" parent="." unique_id=441601900]
 position = Vector2(-55, 0)
 target_position = Vector2(0, 80)
+
+[node name="AreaContato" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaContato"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_contato")

@@ -3,13 +3,16 @@ extends CharacterBody2D
 @export var vida: int = 5
 @export var velocidade: float = 80.0
 @export var alcance_sensor: float = 55.0
+@export var dano_contato: int = 20
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sensor_borda: RayCast2D = $SensorBorda
+@onready var area_contato: Area2D = $AreaContato
 
 var direcao: float = -1.0
 var efeito_acerto: Tween
 var escala_original: Vector2
+var atordoamento_restante: float = 0.0
 
 
 func _ready() -> void:
@@ -19,6 +22,22 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Um acerto abre espaço para o jogador: durante esta pausa o bug não
+	# anda nem causa dano de contato, mas continua caindo se estiver no ar.
+	if atordoamento_restante > 0.0:
+		atordoamento_restante = maxf(0.0, atordoamento_restante - delta)
+		velocity.x = 0.0
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		move_and_slide()
+		return
+	# A área é um pouco maior que o corpo sólido, detectando até um encostão.
+	# Consultar continuamente permite novo dano após acabar a invulnerabilidade,
+	# mesmo se o jogador continuar encostado sem sair e entrar outra vez.
+	for corpo in area_contato.get_overlapping_bodies():
+		if corpo != self and corpo.has_method("receber_dano"):
+			corpo.receber_dano(dano_contato, global_position)
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -49,6 +68,7 @@ func atualizar_direcao() -> void:
 
 
 func receber_golpe() -> void:
+	atordoamento_restante = 0.4
 	vida -= 1
 	print("Vida do bug: ", vida)
 
